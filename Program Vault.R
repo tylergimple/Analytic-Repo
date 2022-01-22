@@ -1,3 +1,8 @@
+#This is Weber Shandwick's Program Vault.
+#Feel free to use any of the templates built out here in your projects.
+#If you would like to add a template of your own for another WS friend to use please contact tgimple@webershandwick.com and I will add it to the vault :)
+
+
 #Make sure these packages are loaded.
 library(ggplot2)
 library(dplyr)
