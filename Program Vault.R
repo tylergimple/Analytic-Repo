@@ -84,7 +84,7 @@ Text3<-as.data.frame(read.csv("File3.csv"))
 Text4<-as.data.frame(read.csv("File4.csv"))
 
 
-words<-as.character(File$Column)
+words<-as.character(File$Column) #Specifiy the File and Column that you want to analyze
 word.corpus<-Corpus(VectorSource(words))
 word.corpus<-word.corpus%>%
   tm_map(removePunctuation)%>% ##eliminate punctuation
