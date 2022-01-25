@@ -21,10 +21,29 @@ bubbleplot2 <- plot_ly(DemoData, x = ~Height, y = ~Weight,
                        marker =
                          list(opacity = 0.7,
                               sizemode = "diameter"), color = ~Gender, colors = 'Spectral')
-
-
-
 bubbleplot2
+
+
+#Animation Examples
+df <- gapminder 
+fig <- df %>%
+  plot_ly(
+    x = ~gdpPercap, 
+    y = ~lifeExp, 
+    size = ~pop, 
+    color = ~continent, 
+    frame = ~year, 
+    text = ~country, 
+    hoverinfo = "text",
+    type = 'scatter',
+    mode = 'markers'
+  )
+fig <- fig %>% layout(
+  xaxis = list(
+    type = "log"
+  )
+)
+fig
 
 COR = cor.test(DemoData$Height,DemoData$Weight)[c("estimate","p.value")]
 COR_text = paste(c("R=","p="),signif(as.numeric(COR,3),3),collapse=" ")
