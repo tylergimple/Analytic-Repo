@@ -31,6 +31,28 @@ bubbleplot2 <- plot_ly(Data, x = ~xaxis, y = ~yaxis,
 bubbleplot2
 
 
+#Graphs with Animation. Useful to graph the movement of data over time.
+Data <- Data #Load your data here
+fig <- Data %>%
+  plot_ly(
+    x = ~xaxis, 
+    y = ~yaxis, 
+    size = ~sizemtric, 
+    color = ~colormetric, 
+    frame = ~animation, 
+    text = ~textmetric, 
+    hoverinfo = "text",
+    type = 'scatter',
+    mode = 'markers'
+  )
+fig <- fig %>% layout(
+  xaxis = list(
+    type = "log"
+  )
+)
+fig
+
+
 #Simple Bar Chart
 ggplot(data=Data, aes(x=xaxis, y=yaxis)) +
   geom_bar(stat="identity", width=0.6,fill="purple")+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
