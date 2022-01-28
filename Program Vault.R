@@ -54,7 +54,7 @@ fig
 
 
 #Simple Bar Chart
-ggplot(data=Data, aes(x=xaxis, y=yaxis)) +
+ggplot(data=DemoData, aes(x=Name, y=Income)) +
   geom_bar(stat="identity", width=0.6,fill="purple")+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 
 
