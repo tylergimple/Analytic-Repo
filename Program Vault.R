@@ -9,6 +9,7 @@ library(dplyr)
 library(plotly)
 library(corrplot)
 library(RColorBrewer)
+library(gapminder)
 
 #Read In Data. Be sure the data is clean, in .csv format, and in the working directory.
 Data<-as.data.frame(read.csv("Data.csv"))
