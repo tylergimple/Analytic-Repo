@@ -47,15 +47,13 @@ fig <- fig %>% layout(
 )
 fig
 
-COR = cor.test(DemoData$Height,DemoData$Weight)[c("estimate","p.value")]
+COR = cor.test(DemoData$Reach,DemoData$Impressions)[c("estimate","p.value")]
 COR_text = paste(c("R=","p="),signif(as.numeric(COR,3),3),collapse=" ")
 
 
 #Simple Bar Chart
-ggplot(data=Data, aes(x=xaxis, y=yaxis)) +
-  geom_bar(stat="identity", width=0.6,fill="purple")+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-
-
+ggplot(data=DemoData, aes(x = reorder(Name, -Reach), y=Reach)) +
+  geom_bar(stat="identity", width=0.6,fill="pink")+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 
 
 #Correlegram
@@ -66,7 +64,7 @@ CorData<-as.data.frame(subset(DemoData, select = -c(Name,Gender)))
 corrplot(DemoData, is.corr = FALSE, method = "circle")
 M<-cor(CorData)
 corrplot(M, method="number")
-pairs(~Height + Weight + Income + Age, data = CorData)
+pairs(~Impressions + Reach + Engagement + Followers, data = CorData)
 
 
 #Text Analytics
