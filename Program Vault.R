@@ -106,6 +106,7 @@ df<-as.data.frame(plot)
 df2<-df[df$Var1 != "and" & df$Var1 != "the" & df$Var1 != "for" & df$Var1 != "you" & df$Var1 != "are" & df$Var1 != "that" & df$Var1 != "if" & df$Var1 != "your" & df$Var1 != "get" & df$Var1 != "with" & df$Var1 != "they" & df$Var1 != "good" & df$Var1 != "great" & df$Var1 != "job" & df$Var1 != "have" & df$Var1 != "not" & df$Var1 != "but" & df$Var1 != "year" & df$Var1 != "this" & df$Var1 != "lot" & df$Var1 != "will" & df$Var1 != "have" & df$Var1 != "some" & df$Var1 != "from" & df$Var1 != "all" & df$Var1 != "too" & df$Var1 != "was" & df$Var1 != "can" & df$Var1 != "their" & df$Var1 != "their" & df$Var1 != "work" & df$Var1 != "big" & df$Var1 != "there" & df$Var1 != "much" & df$Var1 != "need" & df$Var1 != "compani" & df$Var1 != "veri" & df$Var1 != "has" & df$Var1 != "out" & df$Var1 != "dont" & df$Var1 != "like" & df$Var1 != "make" & df$Var1 != "who" & df$Var1 != "mani" & df$Var1 != "said" & df$Var1 != "were", ]
 df3<-head(df2,25)
 
+#Graph your data
 ggplot(df3,aes(Var1, Freq))+geom_bar(stat='identity',fill="blue") + 
   theme(axis.text.x = element_text(angle = 45, vjust = 0.5, hjust=1)) + 
   geom_text(
