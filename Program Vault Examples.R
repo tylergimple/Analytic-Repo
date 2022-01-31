@@ -1,3 +1,4 @@
+#Be sure to install all packages and run and load all packages.
 library(ggplot2)
 library(dplyr)
 library(plotly)
