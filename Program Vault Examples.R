@@ -29,7 +29,7 @@ bubbleplot2
 
 #Simple Bar Chart
 ggplot(data=DemoData, aes(x = reorder(Name, -Reach), y=Reach)) +
-  geom_bar(stat="identity", width=0.6,fill="red")+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+  geom_bar(stat="identity", width=0.6,fill="red")+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))+xlab("Name")
 
 
 #Correlegram
