@@ -12,16 +12,16 @@ DemoData<-as.data.frame(read.csv("RPracticeData.csv"))
 DemoData2<-as.data.frame(DemoData[-c(1,2),])
 
 #Simple Bubble chart of 4 dimensional data. Update x, y, size, color, label to desired values.
-ggplot(DemoData, aes(x=Income, y=Height, size=Weight, color=Gender)) + geom_point(alpha=0.5) + 
+ggplot(DemoData, aes(x=Impressions, y=Reach, size=Engagement, color=Followers)) + geom_point(alpha=0.5) + 
   geom_text(label=DemoData$Name, nudge_x = 0.5, nudge_y = 0.5, check_overlap = T)+ theme(axis.text.x = element_text(angle = 45, vjust = 0.5, hjust=1))
 
 #Plotly Bubble Chart (more interactive and sightly)
-bubbleplot2 <- plot_ly(DemoData, x = ~Height, y = ~Weight,
-                       text = ~Name, size = ~Income,
+bubbleplot2 <- plot_ly(DemoData, x = ~Impressions, y = ~Reach,
+                       text = ~Name, size = ~Engagement,
                        sizes = c(10, 50),
                        marker =
                          list(opacity = 0.7,
-                              sizemode = "diameter"), color = ~Gender, colors = 'Spectral')
+                              sizemode = "diameter"), color = ~Followers, colors = 'Spectral')
 bubbleplot2
 
 
