@@ -26,6 +26,25 @@ bubbleplot2 <- plot_ly(DemoData, x = ~Impressions, y = ~Reach,
 bubbleplot2
 
 
+
+#Simple Bar Chart
+ggplot(data=DemoData, aes(x = reorder(Name, -Reach), y=Reach)) +
+  geom_bar(stat="identity", width=0.6,fill="red")+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+
+#Correlegram
+COR = cor.test(DemoData$Reach,DemoData$Impressions)[c("estimate","p.value")]
+COR_text = paste(c("R=","p="),signif(as.numeric(COR,3),3),collapse=" ")
+#First remove non-numeric columns
+CorData<-as.data.frame(subset(DemoData, select = -c(Name,Gender)))
+
+corrplot(DemoData, is.corr = FALSE, method = "circle")
+M<-cor(CorData)
+corrplot(M, method="number")
+pairs(~Impressions + Reach + Engagement + Followers, data = CorData)
+
+
+
 #Animation Examples
 df <- gapminder 
 fig <- df %>%
@@ -46,26 +65,6 @@ fig <- fig %>% layout(
   )
 )
 fig
-
-COR = cor.test(DemoData$Reach,DemoData$Impressions)[c("estimate","p.value")]
-COR_text = paste(c("R=","p="),signif(as.numeric(COR,3),3),collapse=" ")
-
-
-#Simple Bar Chart
-ggplot(data=DemoData, aes(x = reorder(Name, -Reach), y=Reach)) +
-  geom_bar(stat="identity", width=0.6,fill="pink")+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-
-
-#Correlegram
-
-#First remove non-numeric columns
-CorData<-as.data.frame(subset(DemoData, select = -c(Name,Gender)))
-
-corrplot(DemoData, is.corr = FALSE, method = "circle")
-M<-cor(CorData)
-corrplot(M, method="number")
-pairs(~Impressions + Reach + Engagement + Followers, data = CorData)
-
 
 #Text Analytics
 library(wordcloud)
