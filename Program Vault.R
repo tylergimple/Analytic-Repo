@@ -3,7 +3,7 @@
 #If you would like to add a template of your own for another WS friend to use please contact tgimple@webershandwick.com and I will add it to the vault :)
 
 
-#Make sure these packages are loaded.
+#Make sure these packages are installed and loaded.
 library(ggplot2)
 library(dplyr)
 library(plotly)
