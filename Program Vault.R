@@ -67,7 +67,7 @@ corrplot(M, method="number")
 pairs(~Metric1 + Metric2 + Metric3 + Metric4 + Metric5, data = Data)
 
 
-#Text Analytics
+#Text Analytics. This is useful if you have a large amount of text and want to see what the most common words being used are.
 #Make sure these packages are loaded.
 library(wordcloud)
 library(wordcloud2)
