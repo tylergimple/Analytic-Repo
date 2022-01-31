@@ -32,6 +32,19 @@ bubbleplot2 <- plot_ly(Data, x = ~xaxis, y = ~yaxis,
 bubbleplot2
 
 
+
+#Simple Bar Chart
+ggplot(data=DemoData, aes(x=Name, y=Income)) +
+  geom_bar(stat="identity", width=0.6,fill="purple")+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+
+#Correlegram, Remember to remove non-numeric columns
+CorData<-as.data.frame(subset(Data, select = -c(non-numeric1,non-numeric2)))
+corrplot(Data, is.corr = FALSE, method = "circle")
+M<-cor(Data)
+corrplot(M, method="number")
+pairs(~Metric1 + Metric2 + Metric3 + Metric4 + Metric5, data = Data)
+
 #Graphs with Animation. Useful to graph the movement of data over time.
 Data <- Data #Load your data here
 fig <- Data %>%
@@ -52,20 +65,6 @@ fig <- fig %>% layout(
   )
 )
 fig
-
-
-#Simple Bar Chart
-ggplot(data=DemoData, aes(x=Name, y=Income)) +
-  geom_bar(stat="identity", width=0.6,fill="purple")+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-
-
-#Correlegram, Remember to remove non-numeric columns
-CorData<-as.data.frame(subset(Data, select = -c(non-numeric1,non-numeric2)))
-corrplot(Data, is.corr = FALSE, method = "circle")
-M<-cor(Data)
-corrplot(M, method="number")
-pairs(~Metric1 + Metric2 + Metric3 + Metric4 + Metric5, data = Data)
-
 
 #Text Analytics. This is useful if you have a large amount of text and want to see what the most common words being used are.
 #Make sure these packages are loaded.
