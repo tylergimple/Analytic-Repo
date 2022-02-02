@@ -41,7 +41,7 @@ ggplot(data=DemoData, aes(x=Name, y=Income)) +
 #Correlegram, Remember to remove non-numeric columns
 CorData<-as.data.frame(subset(Data, select = -c(non-numeric1,non-numeric2)))
 corrplot(Data, is.corr = FALSE, method = "circle")
-M<-cor(Data)
+M<-cor(CorData)
 corrplot(M, method="number")
 pairs(~Metric1 + Metric2 + Metric3 + Metric4 + Metric5, data = Data)
 
