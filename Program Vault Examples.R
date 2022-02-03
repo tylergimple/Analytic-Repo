@@ -6,10 +6,11 @@ library(corrplot)
 library(RColorBrewer)
 library(gapminder)
 
-#Read In Data. Be sure the data is clean, in .csv format, and in the working directory.
+#Read In Data. Be sure the data is clean, in .csv format, and in the working directory. This demonstration data looks at 75 hypothetical influencers and contains their
+#names, gender, impressions, reach, engagement, and followers.
 DemoData<-as.data.frame(read.csv("RPracticeData.csv"))
 
-#Remove any row or column if desired, e.g. removing outliers. -c(x,x) Removes rows x and x
+#Remove any row or column if desired, e.g. removing outliers. -c(x,x) Removes rows x and x. This is useful if one or more influencers is clearly an outlier.
 DemoData2<-as.data.frame(DemoData[-c(1,2),])
 
 #Simple Bubble chart of 4 dimensional data. Update x, y, size, color, label to desired values.
@@ -45,7 +46,7 @@ pairs(~Impressions + Reach + Engagement + Followers, data = CorData)
 
 
 
-#Animation Examples
+#Animation Examples. This uses a different data set, but could be applied to viewing influencers over time, for example.
 df <- gapminder 
 fig <- df %>%
   plot_ly(
@@ -66,7 +67,8 @@ fig <- fig %>% layout(
 )
 fig
 
-#Text Analytics
+#Text Analytics. This example looks at words from Boeing's and Airbus' glassdoor and google news pages. It then allows you to see the most commonly used words on
+#those pages. Be sure to have packages below installed and to run lines 80-106.
 library(wordcloud)
 library(wordcloud2)
 library(tm)
