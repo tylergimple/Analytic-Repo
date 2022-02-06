@@ -69,7 +69,7 @@ fig <- fig %>% layout(
 )
 fig
 
-#Text Analytics. This example looks at words from Boeing's and Airbus' glassdoor and google news pages. It then allows you to see the most commonly used words on
+#Text Analytics. This example looks at words from Company 1 and Company 2 glassdoor and google news pages. It then allows you to see the most commonly used words on
 #those pages. Be sure to have packages below installed and to run lines 80-106.
 library(wordcloud)
 library(wordcloud2)
@@ -79,12 +79,12 @@ library(dplyr)
 library(ggplot2)
 library(plotly)
 library(SnowballC)
-Boeing_Glassdoor<-as.data.frame(read.csv("Boeing_Glassdoor.csv"))
-Airbus_Glassdoor<-as.data.frame(read.csv("Airbus_Glassdoor.csv"))
-Boeing_Google<-as.data.frame(read.csv("Boeing_Google.csv"))
-Airbus_Google<-as.data.frame(read.csv("Airbus_Google.csv"))
+Company1_Glassdoor<-as.data.frame(read.csv("Company2_Glassdoor.csv"))
+Company2_Glassdoor<-as.data.frame(read.csv("Company1_Glassdoor.csv"))
+Company1_Google<-as.data.frame(read.csv("Company2_Google.csv"))
+Company2_Google<-as.data.frame(read.csv("Company1_Google.csv"))
 
-words<-as.character(Airbus_Glassdoor$Cons)
+words<-as.character(Company2_Glassdoor$Cons)
 word.corpus<-Corpus(VectorSource(words))
 word.corpus<-word.corpus%>%
   tm_map(removePunctuation)%>% ##eliminate punctuation
