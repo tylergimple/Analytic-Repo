@@ -8,7 +8,7 @@ DemoData<-as.data.frame(read.csv("RPracticeData.csv"))
 
 #Shiny Dashboards
 ui<-dashboardPage(skin="blue",
-                  dashboardHeader(title = "Tyler's Dashboard"),
+                  dashboardHeader(title = "WS Dashboard"),
                   dashboardSidebar(
                     sidebarMenu(
                       menuItem("Influencers", tabName = "Influencers", icon = icon("money")),
