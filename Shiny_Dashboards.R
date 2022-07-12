@@ -4,7 +4,7 @@ library(plotly)
 library(DT)
 library(rsconnect)
 
-DemoData<-as.data.frame(read.csv("RPracticeData.csv"))
+Influencers<-as.data.frame(read.csv("RPracticeData.csv"))
 
 #Shiny Dashboards
 ui<-dashboardPage(skin="blue",
