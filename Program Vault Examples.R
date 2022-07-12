@@ -9,7 +9,6 @@ library(RColorBrewer)
 library(gapminder)
 library(shiny)
 library(shinydashboard)
-library(plotly)
 library(DT)
 library(rsconnect)
 
