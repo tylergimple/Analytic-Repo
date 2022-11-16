@@ -1,4 +1,4 @@
-#This is WS Program Vault examples. It runs all programs in the program vault with hypothetical data. Hopefully this will help you run and/or figure out any syntax from 
+#This is Havas Media Program Vault examples. It runs all programs in the program vault with hypothetical data. Hopefully this will help you run and/or figure out any syntax from 
 #all of the programs in the program vault. If you added a generic program to the vault, please also prepare an example here with hypothetical data.
 #Be sure to install all packages and run and load all packages.
 library(ggplot2)
