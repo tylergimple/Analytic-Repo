@@ -1,6 +1,6 @@
 #Hello Welcome to Havas' Program Vault.
 #Feel free to use any of the templates here in your projects.
-#If you would like to add a template or program of your own for another WS friend to use please contact tgimple@webershandwick.com and I will add it to the vault :)
+#If you would like to add a template or program of your own for another Havas friend to use please contact tyler.gimple@havasmedia.com and I will add it to the vault :)
 
 
 #Make sure these packages are installed and loaded.
